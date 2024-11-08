@@ -2,8 +2,8 @@ import os
 from datetime import date, time, datetime
 import datetime
 
-total_day = 4 #total days back
-commit_frequency = 1 #commit time per day
+total_day = 40 #total days back
+commit_frequency = 2 #commit time per day
 repo_link = "https://github.com/Atharv-101/Student-Management-System.git"
 
 tl = total_day #time day
@@ -20,11 +20,11 @@ while tl > 0:
         f = open("commit.txt", "a+")
         l_date = now + datetime.timedelta(days=-pointer)
         formatdate = l_date.strftime("%Y-%m-%d")
-        f.write(f"commit ke {ctr}: {formatdate}\n")
+        f.write(f"commit to {ctr}: {formatdate}\n")
         f.close()
         os.system("git add .")
-        os.system(f"git commit --date=\"{formatdate} 12:15:10\" -m \"commit ke {ctr}\"")
-        print(f"commit ke {ctr}: {formatdate}")
+        os.system(f"git commit --date=\"{formatdate} 12:15:10\" -m \"commit to {ctr}\"")
+        print(f"commit to {ctr}: {formatdate}")
         ct-=1
         ctr+=1
     pointer+=1
